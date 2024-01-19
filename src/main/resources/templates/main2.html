@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>메인 화면</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 반응형 웹을 위한 뷰포트 설정 -->
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      background: url('/main_2.gif') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .centered-button {
+      position: absolute;
+      left: 50%;
+      top: 85%; /* 버튼을 화면에서 더 아래로 내림 */
+      transform: translate(-50%, -50%);
+      width: 80%; /* 버튼의 너비를 조정 */
+      max-width: 300px; /* 최대 너비 설정 */
+    }
+
+    .start-button {
+      width: 100%; /* 이미지 버튼의 너비를 부모 요소에 맞춤 */
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+
+    /* 미디어 쿼리를 추가하여 화면 크기가 작을 때의 스타일을 지정 */
+    @media (max-width: 768px) {
+      .centered-button {
+        top: 75%; /* 모바일 화면에서 버튼의 위치를 조정 */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .centered-button {
+        top: 65%; /* 더 작은 모바일 화면에서 버튼의 위치를 조정 */
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="centered-button">
+  <img src="/button.gif" class="start-button" onclick="window.location.href='http://localhost:9090/register'" alt="시작하기">
+</div>
+
+</body>
+</html>

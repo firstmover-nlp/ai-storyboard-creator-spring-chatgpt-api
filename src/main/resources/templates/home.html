@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>홈</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      background: url('/back_purple.gif') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Arial', sans-serif;
+    }
+    .content header h1 {
+      text-align: center; /* 중앙 정렬 */
+      font-size: 36px; /* 폰트 크기 증가 */
+    }
+
+    .content header p {
+      text-align: center; /* 중앙 정렬 */
+      font-size: 20px; /* 폰트 크기 증가 */
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgba(204, 204, 254, 0.5);
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .sidebar a {
+      padding: 10px 8px 10px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #f1f1f1;
+      background-color: #CCCCFE;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+
+    .main-content .content header, .main-content .sections-container section {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .button {
+      padding: 15px 30px; /* 패딩 증가 */
+      margin-top: 10px;
+      background-color: #CCCCFE;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 18px; /* 폰트 크기 증가 */
+    }
+
+    .button:hover {
+      background-color: #aaa;
+    }
+
+    .dropdown {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 4px;
+      border: 1px solid #CCC;
+    }
+
+    .box-container {
+      background-color: rgba(204, 204, 254, 0.5);
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px; /* 가로 너비 줄임 */
+      margin-left: auto; /* 중앙 정렬을 위해 추가 */
+      margin-right: auto; /* 중앙 정렬을 위해 추가 */
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidebar {padding-top: 15px;}
+      .sidebar a {font-size: 18px;}
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100px;
+      }
+      .sidebar a {
+        text-align: center;
+        font-size: 14px;
+      }
+      .main-content {
+        margin-left: 100px;
+      }
+    }
+    .profile-picture img {
+      display: block;
+      margin: 0 auto; /* Center the image */
+      border-radius: 50%; /* Makes the image circular */
+      width: 200px;
+      height: 200px;
+      border: 3px solid #CCC; /* Optional: Adds a border around the image */
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="profile-picture">
+    <img src="/profile.gif" alt="Profile Picture"/>
+  </div>
+  <a href="/main">메인</a>
+  <a href="/register">Logout</a>
+  <a href="/login">Login</a>
+  <a href="/users">사용자</a>
+  <a href="/">광고 시나리오 & 콘티 AI</a>
+  <a href="/">
+    <img src="/denis.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+    DENIS
+  </a>
+
+  <a href="/">
+    <img src="/remy.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+    REMY
+  </a>
+  <a href="/">숏폼 시나리오 & 콘티 AI</a>
+  <a href="/">
+    <img src="/mylo.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+    MYLO
+  </a>
+  <a href="/">
+    <img src="/eugene.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+    EUGENE
+  </a>
+  <a href="/">
+    <img src="/camila.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+    CAMILA
+  </a>
+  <a href="/">교육용 시나리오 & 콘티 AI</a>
+  <a href="/">
+    <img src="/dave.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+    DAVE
+  </a>
+  <a href="/list">시나리오 & 콘티 공유 공간</a>
+</div>
+
+<div class="main-content">
+  <div class="content">
+    <header>
+      <h1>AI 숏폼 광고 시나리오 생성기</h1>
+      <p>AI를 활용한 시나리오/콘티 제작</p>
+      <button class="button" onclick="location.href='game'">시나리오/콘티 제작</button>
+    </header>
+
+    <div class="sections-container">
+      <div class="box-container">
+        <section>
+          <h2>숏폼 광고를 쉽게 제작하세요</h2>
+          <p>AI가 당신의 아이디어를 시나리오와 콘티로 변환합니다.</p>
+        </section>
+      </div>
+
+      <div class="box-container">
+        <section>
+          <h2>주요 기능</h2>
+          <ul>
+            <li>AI 기반 시나리오 생성</li>
+            <li>커스텀 콘티 옵션</li>
+            <li>즉시 피드백 및 수정 기능</li>
+          </ul>
+          <select class="dropdown">
+            <option value="intro">소개</option>
+            <option value="advanced">고급</option>
+          </select>
+        </section>
+      </div>
+
+      <div class="box-container">
+        <section>
+          <h2>예시</h2>
+          <p>이전에 AI가 생성한 광고 시나리오와 콘티의 예시들입니다.</p>
+          <button class="button">예시보기</button>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

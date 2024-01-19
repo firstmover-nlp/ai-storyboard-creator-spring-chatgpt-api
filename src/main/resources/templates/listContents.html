@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>시나리오&콘티 공유</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      background: url('/back_purple.gif') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Arial', sans-serif;
+    }
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgba(204, 204, 254, 0.5);
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+    .sidebar a {
+      padding: 10px 8px 10px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    .sidebar a:hover {
+      color: #f1f1f1;
+      background-color: #CCCCFE;
+    }
+    .container {
+      text-align: center;
+      margin-left: 260px;
+      padding-top: 50px;
+      width: 80%;
+    }
+    ul {
+      list-style-type: none;
+    }
+    li {
+      margin-bottom: 15px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    li:hover {
+      background-color: #f0f0f0;
+      transform: scale(1.02);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      transition: transform 0.3s ease-in-out;
+    }
+    img:hover {
+      transform: scale(1.05);
+    }
+    p {
+      transition: color 0.3s ease;
+    }
+    p:hover {
+      color: #4a4a4a;
+    }
+    .profile-picture img {
+      display: block;
+      margin: 0 auto; /* Center the image */
+      border-radius: 50%; /* Makes the image circular */
+      width: 200px;
+      height: 200px;
+      border: 3px solid #CCC; /* Optional: Adds a border around the image */
+    }
+    .starter-template h1 {
+      font-family: 'Arial', sans-serif; /* 폰트 스타일 */
+      color: #ffffff; /* 글씨 색상 */
+      background-color: rgba(100, 100, 200, 0.7); /* 배경 색상 */
+      padding: 10px; /* 내부 여백 */
+      border-radius: 10px; /* 테두리 둥글기 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+      border: 2px solid #888888; /* 테두리 */
+      text-align: center; /* 중앙 정렬 */
+      margin-bottom: 20px; /* 아래쪽 여백 */
+    }
+
+
+    li p {
+      font-family: 'Arial', sans-serif; /* 폰트 스타일 */
+      font-size: 16px; /* 글씨 크기 */
+      color: #333333; /* 글씨 색상 */
+      text-align: left; /* 왼쪽 정렬 */
+      margin: 5px 0; /* 상하 여백 */
+      padding: 5px; /* 내부 여백 */
+      line-height: 1.6; /* 줄 간격 */
+      background-color: rgba(255, 255, 255, 0.9); /* 배경 색상 */
+      border-radius: 5px; /* 테두리 둥글기 */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    }
+
+  </style>
+</head>
+<body>
+<div class="sidebar">
+  <div class="profile-picture">
+    <img src="/profile.gif" alt="Profile Picture"/>
+  </div>
+  <a href="/main">메인</a>
+  <a href="/register">Logout</a>
+  <a href="/login">Login</a>
+  <a href="/users">사용자</a>
+  <a href="/">광고 시나리오 & 콘티 AI</a>
+  <a href="/">
+    <img src="/denis.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+    DENIS
+  </a>
+
+  <a href="/">
+    <img src="/remy.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+    REMY
+  </a>
+  <a href="/">숏폼 시나리오 & 콘티 AI</a>
+  <a href="/">
+    <img src="/mylo.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+    MYLO
+  </a>
+  <a href="/">
+    <img src="/eugene.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+    EUGENE
+  </a>
+  <a href="/">
+    <img src="/camila.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+    CAMILA
+  </a>
+  <a href="/">교육용 시나리오 & 콘티 AI</a>
+  <a href="/">
+    <img src="/dave.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+    DAVE
+  </a>
+  <a href="/list">시나리오 & 콘티 공유 공간</a>
+</div>
+
+<main role="main" class="container">
+  <div class="starter-template">
+    <h1>FASTFOLLOWER들의 시나리오&콘티</h1>
+    <div>
+      <ul>
+        <li th:each="content : ${contents}">
+          <p th:text="'ID: ' + ${content.id}"></p>
+          <p th:text="'시나리오: ' + ${content.scenario}"></p>
+          <img th:src="${content.imageUri}" alt="생성된 이미지" />
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<script>
+  document.querySelectorAll('li').forEach(function(li) {
+    li.addEventListener('mouseover', function(e) {
+      // 툴팁 효과나 다른 인터랙션 추가 가능
+    });
+
+    li.addEventListener('click', function() {
+      // 클릭 시 특정 동작 수행
+      alert('클릭한 시나리오: ' + this.querySelector('p').textContent);
+    });
+  });
+</script>
+
+</body>
+</html>

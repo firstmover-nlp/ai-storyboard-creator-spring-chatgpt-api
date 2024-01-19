@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>ChatGPT & Spring demo</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            background: url('/back_purple.gif') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(204, 204, 254, 0.5);
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            padding: 10px 8px 10px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+            background-color: #CCCCFE;
+        }
+
+        .container {
+            text-align: center;
+            margin-left: 260px;
+            padding-top: 50px;
+            width: 80%;
+        }
+
+        .starter-template h1 {
+            font-size: 2.5rem;
+            color: #CCCCFE;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        .starter-template h2 {
+            font-size: 1.5rem;
+            color: #CCCCCC;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        .form-container {
+            background-color: rgba(204, 204, 254, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto 30px;
+            width: calc(100% - 300px);
+            max-width: 700px;
+        }
+
+        .form-container input[type="submit"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #DDD;
+            background-color: #CCCCFE;
+            color: #FFFFFF;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #818181;
+        }
+
+        .scenario-container, .image-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .scenario-container h2, .image-container h2 {
+            color: #666666;
+        }
+
+        .scenario-container p {
+            color: #333333;
+            margin-bottom: 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 0;
+            }
+
+            .form-container {
+                width: 90%;
+            }
+        }
+        .loading-overlay {
+            /* existing styles */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-overlay img {
+            width: 100px; /* Adjust as needed */
+            height: auto;
+        }
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .profile-picture img {
+            display: block;
+            margin: 0 auto; /* Center the image */
+            border-radius: 50%; /* Makes the image circular */
+            width: 200px;
+            height: 200px;
+            border: 3px solid #CCC; /* Optional: Adds a border around the image */
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <div class="profile-picture">
+        <img src="/profile.gif" alt="Profile Picture"/>
+    </div>
+    <a href="/main">메인</a>
+    <a href="/register">Logout</a>
+    <a href="/login">Login</a>
+    <a href="/users">사용자</a>
+    <a href="/">광고 시나리오 & 콘티 AI</a>
+    <a href="/">
+        <img src="/denis.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+        DENIS
+    </a>
+
+    <a href="/">
+        <img src="/remy.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+        REMY
+    </a>
+    <a href="/">숏폼 시나리오 & 콘티 AI</a>
+    <a href="/">
+        <img src="/mylo.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+        MYLO
+    </a>
+    <a href="/">
+        <img src="/eugene.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+        EUGENE
+    </a>
+    <a href="/">
+        <img src="/camila.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+        CAMILA
+    </a>
+    <a href="/">교육용 시나리오 & 콘티 AI</a>
+    <a href="/">
+        <img src="/dave.png" alt="Image Description" style="width: 40px; height: 40px; vertical-align: middle;">
+        DAVE
+    </a>
+    <a href="/list">시나리오 & 콘티 공유 공간</a>
+</div>
+<main role="main" class="container">
+    <div class="starter-template">
+        <h1>시나리오 AI입니다.<br/>독특한 영상 아이디어를 드립니다.</h1>
+        <h2>영상 키워드와 분위기를 넣어주세요.</h2>
+        <div class="loading-overlay" id="loadingOverlay" style="display:none;">
+            <img src="/loading.gif" alt="Loading..."/>
+        </div>
+        <div class="form-container">
+            <form th:action="@{/}" method="post">
+                <fieldset>
+                    <div class="form-group">
+                        <input type="text" name="prompt" th:value="${request}" required autofocus/>
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="시나리오&콘티 생성" />
+                    </div>
+                </fieldset>
+            </form>
+
+            <form th:action="@{/saveContent}" method="post">
+                <input type="hidden" name="scenario" th:value="${scenario}" />
+                <input type="hidden" name="imageUri" th:value="${imageUri}" />
+                <input type="submit" value="공유하기" />
+            </form>
+        </div>
+        <div class="scenario-container" th:if="${scenario != null}">
+            <h2>생성된 시나리오</h2>
+            <p th:text="${scenario}"></p>
+        </div>
+        <div class="image-container" th:if="${imageUri != null}">
+            <h2>생성된 이미지</h2>
+            <img th:src="${imageUri}" alt="생성된 이미지" />
+        </div>
+    </div>
+</main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.querySelector("form");
+        const loadingOverlay = document.getElementById("loadingOverlay");
+
+        form.addEventListener("submit", function() {
+            loadingOverlay.style.display = "flex"; // 로딩 바 표시
+        });
+
+        // AJAX 요청을 사용하는 경우 응답이 완료되면 다음 함수를 호출합니다.
+        function hideLoading() {
+            loadingOverlay.style.display = "none"; // 로딩 바 숨김
+        }
+    });
+</script>
+
+</body>
+</html>
