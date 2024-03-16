@@ -9,8 +9,7 @@
 
 ![image](https://github.com/firstmover-nlp/chatgpt/assets/124758100/6dd4963b-86c2-42cb-ab8e-d296d1e92091)
 ![image](https://github.com/firstmover-nlp/chatgpt/assets/124758100/b3e18377-3f9e-4075-9ec7-4a2e2126134f)
-![image](https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758100/e6ae2817-53e0-42bd-8bff-6272bf53fc5e)
-![image](https://github.com/firstmover-nlp/chatgpt/assets/124758100/32b72d50-487b-477e-87e8-efd145122e0e)
+![image](https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758100/3a9b429d-4d6e-47f3-ae03-aa2af881595a)
 ![image](https://github.com/firstmover-nlp/chatgpt/assets/124758100/25f8f032-75b3-4a7e-9d22-01c2e755eb83)
 ![image](https://github.com/firstmover-nlp/chatgpt/assets/124758100/93ad7617-fdfd-4cc2-b5a1-f7b03fc4858c)
 ![image](https://github.com/firstmover-nlp/chatgpt/assets/124758100/88975f17-a474-49dd-a347-6e1d9f71a7d6)
