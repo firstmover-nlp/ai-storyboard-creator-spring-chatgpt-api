@@ -14,7 +14,7 @@
 
 
 ## 2.시스템 아키텍처
-![image](https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758100/79bbe465-e5fc-4b21-a840-d4cb9176a0ad)
+![스크린샷 2024-03-26 001316](https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758100/09fe6ee2-2201-4177-a178-7a6da44b06c3)
 ![image](https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758100/243ae72b-5a45-486d-8b2b-7571950352d1)
 
 ----
