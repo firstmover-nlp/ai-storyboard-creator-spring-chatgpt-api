@@ -12,6 +12,36 @@
 ## 1.기술 스택
 
 
+#### Environment:
+
+- Java 17  
+
+- Gradle build tool  
+
+- IntelliJ IDEA with Gradle integration  
+
+- Embedded Tomcat server for JSP compilation  
+
+- MongoDB database   
+
+
+#### TechStack: 
+
+- Spring Boot 3.2.0  
+
+- Spring WebFlux for reactive web framework  
+
+- Thymeleaf template engine  
+
+- MongoDB with driver version 4.11.1  
+
+- Project Lombok for code simplification  
+
+- JSP with development configuration  
+
+- JSTL (JavaServer Pages Standard Tag Library)
+
+
 
 ## 2.시스템 아키텍처
 ![스크린샷 2024-03-26 001316](https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758100/09fe6ee2-2201-4177-a178-7a6da44b06c3)
